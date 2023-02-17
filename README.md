@@ -75,10 +75,12 @@ The Cloudformation template has following parameters that can be changed:
 After the deployment finished, there are some additional steps required to initialize the local environment:
 
 1. Update the local kubeconfig to configure the kubectl with the created cluster
-2. Update the k8s-resources/config-map.yaml to the created Redis Database Address
-3. Build and package the Java Service
-4. Build and push the Docker image
-5. Update the k8s-resources/deployment.yaml to use the newly created image
+   #aws eks update-kubeconfig --region <region> --name <cluster name>
+   aws eks update-kubeconfig --region ap-south-1 --name java-app-demo-cluster
+3. Update the k8s-resources/config-map.yaml to the created Redis Database Address
+4. Build and package the Java Service
+5. Build and push the Docker image
+6. Update the k8s-resources/deployment.yaml to use the newly created image
 
 These steps can be automatically executed using the init.sh. The script needs following parameter:
 
