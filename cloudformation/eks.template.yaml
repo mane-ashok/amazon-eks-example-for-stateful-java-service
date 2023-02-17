@@ -96,7 +96,7 @@ Resources:
           - !Select [1, !Ref PrivateSubnets]
           - !Select [2, !Ref PrivateSubnets]
       RoleArn: !GetAtt EKSClusterRole.Arn
-      Version: 1.18
+      Version: 1.24
 
   EKSNodeGroup:
     Type: AWS::EKS::Nodegroup
