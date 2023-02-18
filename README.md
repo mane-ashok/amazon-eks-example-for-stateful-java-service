@@ -76,7 +76,7 @@ After the deployment finished, there are some additional steps required to initi
 
 1. Update the local kubeconfig to configure the kubectl with the created cluster
    #aws eks update-kubeconfig --region <<region>> --name <<cluster name>>
-   aws eks update-kubeconfig --region ap-south-1 --name java-app-demo-cluster
+   Example: aws eks update-kubeconfig --region ap-south-1 --name java-app-demo-cluster --profile kan-cli ( the same profile with which you deployed the stack)
 3. Update the k8s-resources/config-map.yaml to the created Redis Database Address
 4. Build and package the Java Service
 5. Build and push the Docker image
