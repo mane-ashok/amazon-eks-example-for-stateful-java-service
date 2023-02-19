@@ -16,6 +16,7 @@ Parameters:
     Description: Instance type for Amazon ElastiCache (Redis)
     Type: String
     AllowedValues:
+      - cache.t2.micro
       - cache.t3.micro
       - cache.t3.small
       - cache.t3.medium

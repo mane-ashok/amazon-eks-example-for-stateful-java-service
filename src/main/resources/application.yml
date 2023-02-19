@@ -1,2 +1,8 @@
 server:
   port : 8080
+spring:
+  session:
+    store-type: redis
+  redis:
+    host: my-redis.euyr0d.ng.0001.aps1.cache.amazonaws.com
+    port: 6379

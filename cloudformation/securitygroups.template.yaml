@@ -13,6 +13,9 @@ Parameters:
     Type: String
   EKSClusterSecurityGroup:
     Type: String
+  VPCcidr:
+    Description: Please enter the IP range (CIDR notation) for the  VPC
+    Type: String
 
 Resources:
 
@@ -26,7 +29,8 @@ Resources:
         - IpProtocol: tcp
           FromPort: '6379'
           ToPort: '6379'
-          SourceSecurityGroupId: !Ref EKSClusterSecurityGroup
+#         SourceSecurityGroupId: !Ref EKSClusterSecurityGroup, added below property to widen the scope for troubleshooting the redis cluster using redis-cli
+          CidrIp: !Ref VPCcidr
 
 Outputs:
   ElasticacheSecurityGroup:

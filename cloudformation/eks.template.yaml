@@ -25,15 +25,15 @@ Parameters:
   EKSNodeGroupMinSize:
     Description: Minimum Size of the EKS Node Group
     Type: Number
-    Default: 1
+    Default: 2
   EKSNodeGroupMaxSize:
     Description: Maximum Size of the EKS Node Group
     Type: Number
-    Default: 10
+    Default: 3
   EKSNodeGroupDesiredSize:
     Description: Desired Size of the EKS Node Group
     Type: Number
-    Default: 3
+    Default: 2
 
 Mappings:
   ServicePrincipals:

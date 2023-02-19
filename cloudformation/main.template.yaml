@@ -34,7 +34,7 @@ Parameters:
   RedisInstanceType:
     Description: Instance type used for the Redis instance
     Type: String
-    Default: cache.t3.micro
+    Default: cache.t2.micro
   CacheAZMode:
     Description: Redis Cache AZ Mode
     Type: String
@@ -45,15 +45,15 @@ Parameters:
   EKSNodeGroupMinSize:
     Description: Minimum Size of the EKS Node Group
     Type: Number
-    Default: 1
+    Default: 2
   EKSNodeGroupMaxSize:
     Description: Maximum Size of the EKS Node Group
     Type: Number
-    Default: 10
+    Default: 3
   EKSNodeGroupDesiredSize:
     Description: Desired Size of the EKS Node Group
     Type: Number
-    Default: 3
+    Default: 2
 
 Resources:
   NetworkStack:
@@ -94,6 +94,8 @@ Resources:
           Fn::GetAtt:
             - EKSStack
             - Outputs.EKSClusterSecurityGroup
+        VPCcidr:
+          Ref: VPCcidr
       Tags:
         - Key: Name
           Value: SecurityGroupStack
