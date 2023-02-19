@@ -62,11 +62,11 @@ The Cloudformation template has following parameters that can be changed:
 | PublicSubnets             | Public Subnets                                    | CommaDelimitedList | 10.0.1.0/24,10.0.2.0/24,10.0.3.0/24 |
 | PrivateSubnets            | Private Subnets                                   | CommaDelimitedList | 10.0.4.0/24,10.0.5.0/24,10.0.6.0/24 |
 | PrivateDBSubnets          | Private DB Subnet                                 | CommaDelimitedList | 10.0.7.0/24,10.0.8.0/24,10.0.9.0/24 |
-| EKSWorkerNodeInstanceType | Instance type used for the EKS Managed Node Group | String             | t3.micro                            |
+| EKSWorkerNodeInstanceType | Instance type used for the EKS Managed Node Group | String             | t2.micro                            |
 | EKSNodeGroupMinSize       | Minimum Size of the EKS Node Group                | Number             | 1                                   |
-| EKSNodeGroupMaxSize       | Maximum Size of the EKS Node Group                | Number             | 10                                  |
-| EKSNodeGroupDesiredSize   | Desired Size of the EKS Node Group                | Number             | 3                                   |
-| RedisInstanceType         | Instance type used for the Redis instance         | String             | cache.t3.micro                      |
+| EKSNodeGroupMaxSize       | Maximum Size of the EKS Node Group                | Number             | 2                                  |
+| EKSNodeGroupDesiredSize   | Desired Size of the EKS Node Group                | Number             | 1                                   |
+| RedisInstanceType         | Instance type used for the Redis instance         | String             | cache.t2.micro                      |
 | CacheAZMode               | Redis Cache AZ Mode                               | String             | single-az                           |
 
 
