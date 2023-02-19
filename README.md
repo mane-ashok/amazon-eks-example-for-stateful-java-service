@@ -62,10 +62,10 @@ The Cloudformation template has following parameters that can be changed:
 | PublicSubnets             | Public Subnets                                    | CommaDelimitedList | 10.0.1.0/24,10.0.2.0/24,10.0.3.0/24 |
 | PrivateSubnets            | Private Subnets                                   | CommaDelimitedList | 10.0.4.0/24,10.0.5.0/24,10.0.6.0/24 |
 | PrivateDBSubnets          | Private DB Subnet                                 | CommaDelimitedList | 10.0.7.0/24,10.0.8.0/24,10.0.9.0/24 |
-| EKSWorkerNodeInstanceType | Instance type used for the EKS Managed Node Group | String             | t2.micro                            |
-| EKSNodeGroupMinSize       | Minimum Size of the EKS Node Group                | Number             | 1                                   |
-| EKSNodeGroupMaxSize       | Maximum Size of the EKS Node Group                | Number             | 2                                  |
-| EKSNodeGroupDesiredSize   | Desired Size of the EKS Node Group                | Number             | 1                                   |
+| EKSWorkerNodeInstanceType | Instance type used for the EKS Managed Node Group | String             | t3.micro                            |
+| EKSNodeGroupMinSize       | Minimum Size of the EKS Node Group                | Number             | 2                                   |
+| EKSNodeGroupMaxSize       | Maximum Size of the EKS Node Group                | Number             | 3                                  |
+| EKSNodeGroupDesiredSize   | Desired Size of the EKS Node Group                | Number             | 2                                   |
 | RedisInstanceType         | Instance type used for the Redis instance         | String             | cache.t2.micro                      |
 | CacheAZMode               | Redis Cache AZ Mode                               | String             | single-az                           |
 
@@ -81,7 +81,7 @@ After the deployment finished, there are some additional steps required to initi
 4. Build and package the Java Service
 5. Build and push the Docker image
 6. Update the k8s-resources/deployment.yaml to use the newly created image
-
+=========================== auto update is broken, so follow above manual steps===========
 These steps can be automatically executed using the init.sh. The script needs following parameter:
 
 1. `-u` - Docker Hub User Name
@@ -91,7 +91,7 @@ These steps can be automatically executed using the init.sh. The script needs fo
 A sample invocation looks like this: `./init.sh -u bastianklein -r java-ms -t 1.2`.
 
 This information is used to concatenate the full docker repository string. In the above example this would resolve to: `bastianklein/java-ms:1.2`
-
+=========================== auto update is broken===========
 ## Deploying the Java service
 
 As everything is set up, it is time to deploy the Java service. Below list of commands first deploys all Kubernetes resources and then lists pods and services.
